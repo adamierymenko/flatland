@@ -1,0 +1,48 @@
+Building Flatland on:
+
+*** MacOSX:
+
+Make sure you have the developer tools installed, and type:
+
+make -f Makefile.MacOSX
+
+It will build a binary for all four architectures: PPC32, PPC64,
+x86-32, and x86-64.
+
+*** Linux:
+
+Install the GNU C++ compiler and the OpenGL and GLUT libaries and their
+header files. On most Debian/Ubuntu systems, you can type:
+
+apt-get install libglut-dev
+
+On other systems you might have to use different package managers, or
+the GLUT package might have a different name.
+
+Then, type:
+
+make -f Makefile.Linux
+
+*** Windows (32-bit):
+
+For convenience, I've included an already-built Windows binary in the
+win32 directory since building on Windows is always harder than on other
+platforms. You'll need to put the glut32.dll file packaged with it
+at some standard DLL location on your system or in the same directory
+that you place flatland.exe.
+
+I've only built Flatland using the MinGW package available here:
+
+http://nuwen.net/mingw.html
+
+In addition, the GLUT library compiled for linking with MinGW is included
+with the Flatland distro under the win32/ subdirectory. The make file for
+win32 is already set up to reference this. So, just type:
+
+make -f Makefile.Windows-MinGW
+
+*** Windows (64-bit):
+
+No directions here yet... if you get it to build here let me know!
+
+- Adam Ierymenko <adam.ierymenko@gmail.com>

@@ -1,0 +1,9 @@
+CXXFLAGS=-O6 -fomit-frame-pointer -I.\win32\GLUT
+LIBS=-lm -lopengl32 -lglu32 win32\GLUT\libglut32.a
+
+all:
+	g++ $(CXXFLAGS) -o flatland flatland.cpp GLPlotWindow.cpp $(LIBS)
+	strip flatland.exe
+
+clean:
+	rm -f flatland.exe *.o core

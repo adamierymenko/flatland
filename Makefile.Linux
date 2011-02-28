@@ -1,0 +1,8 @@
+CXXFLAGS=-O6 -fomit-frame-pointer
+LIBS=-lm -lGL -lGLU -lglut
+
+all:
+	g++ $(CXXFLAGS) -o flatland flatland.cpp GLPlotWindow.cpp $(LIBS)
+
+clean:
+	rm -f flatland *.o core

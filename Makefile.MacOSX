@@ -1,0 +1,11 @@
+MAC_ARCH_FLAGS=-arch i386 -arch x86_64 -arch ppc -arch ppc64
+CXXFLAGS=-O6 $(MAC_ARCH_FLAGS)
+LIBS=-lm -framework OpenGL -framework GLUT
+
+all:
+	g++ $(CXXFLAGS) -o flatland flatland.cpp GLPlotWindow.cpp $(LIBS)
+	strip flatland
+
+clean:
+	rm -f flatland *.o core
+	rm -rf *.dSYM
